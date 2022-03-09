@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.task_management">
+    package="dev.dennismichol.taskmanagement">
    <application
         android:label="task_management"
         android:name="${applicationName}"
