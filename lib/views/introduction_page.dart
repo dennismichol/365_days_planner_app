@@ -60,7 +60,7 @@ class IntroductionPage extends StatelessWidget {
         showDoneButton: false,
         dotsDecorator: const DotsDecorator(
           spacing: EdgeInsets.all(5),
-          activeColor: primary,
+          activeColor: primaryColorOne,
           size: Size.square(8),
         ),
         globalFooter: Padding(
@@ -72,16 +72,17 @@ class IntroductionPage extends StatelessWidget {
                 onPressed: () {},
                 child: const Text(string0152),
                 style: TextButton.styleFrom(
-                    primary: textColorOne,
-                    backgroundColor: primary,
-                    padding: const EdgeInsets.all(20),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20,
-                    )),
+                  primary: secondaryColorOne,
+                  backgroundColor: primaryColorOne,
+                  padding: const EdgeInsets.all(20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  ),
+                ),
               ),
               Center(
                 child: Padding(
@@ -91,7 +92,7 @@ class IntroductionPage extends StatelessWidget {
                       style: const TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 15,
-                        color: textColorFour,
+                        color: secondaryColorFour,
                       ),
                       children: <TextSpan>[
                         const TextSpan(text: string0153),
