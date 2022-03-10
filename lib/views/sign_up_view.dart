@@ -5,20 +5,22 @@ import 'package:task_management/constants/colors.dart';
 import 'package:task_management/constants/routes.dart';
 import 'package:task_management/constants/strings.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({Key? key}) : super(key: key);
+class SignUpView extends StatefulWidget {
+  const SignUpView({Key? key}) : super(key: key);
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _SignUpViewState extends State<SignUpView> {
+  late final TextEditingController _name;
   late final TextEditingController _email;
   late final TextEditingController _password;
   bool _isObscure = true;
 
   @override
   void initState() {
+    _name = TextEditingController();
     _email = TextEditingController();
     _password = TextEditingController();
     super.initState();
@@ -26,6 +28,7 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   void dispose() {
+    _name.dispose();
     _email.dispose();
     _password.dispose();
     super.dispose();
@@ -46,8 +49,34 @@ class _LoginViewState extends State<LoginView> {
               child: Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 50),
                 child: Text(
-                  'Sign in',
+                  string0165,
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+              child: TextField(
+                controller: _name,
+                enableSuggestions: false,
+                autocorrect: false,
+                keyboardType: TextInputType.name,
+                decoration: InputDecoration(
+                  hintText: string0166,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      width: 1,
+                      color: Colors.black,
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      width: 1,
+                      color: Colors.black,
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
               ),
             ),
@@ -128,7 +157,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text(string0157),
+                  child: const Text(string0152),
                   style: TextButton.styleFrom(
                     primary: secondaryColorOne,
                     backgroundColor: primaryColorOne,
@@ -155,9 +184,9 @@ class _LoginViewState extends State<LoginView> {
                       color: secondaryColorFour,
                     ),
                     children: <TextSpan>[
-                      const TextSpan(text: string0155),
+                      const TextSpan(text: string0161),
                       TextSpan(
-                        text: string0156,
+                        text: string0162,
                         style: const TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.w600,
@@ -166,7 +195,7 @@ class _LoginViewState extends State<LoginView> {
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.of(context).pushNamedAndRemoveUntil(
-                                signUpRoute, (route) => false);
+                                loginRoute, (route) => false);
                           },
                       ),
                     ],
@@ -229,7 +258,7 @@ class _LoginViewState extends State<LoginView> {
                     FontAwesomeIcons.facebookF,
                     color: Colors.white,
                   ),
-                  label: const Text(string0158),
+                  label: const Text(string0163),
                   style: TextButton.styleFrom(
                     primary: secondaryColorOne,
                     backgroundColor: facebookBlue,
@@ -264,7 +293,7 @@ class _LoginViewState extends State<LoginView> {
                     FontAwesomeIcons.google,
                     color: Colors.white,
                   ),
-                  label: const Text(string0159),
+                  label: const Text(string0164),
                   style: TextButton.styleFrom(
                     primary: secondaryColorOne,
                     backgroundColor: googleRed,

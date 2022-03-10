@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_management/constants/routes.dart';
 import 'package:task_management/firebase_options.dart';
 import 'package:task_management/views/introduction_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'dart:developer' as devtools show log;
 
 import 'package:task_management/views/login_view.dart';
+import 'package:task_management/views/sign_up_view.dart';
 
 void main() {
   runApp(
@@ -15,6 +17,10 @@ void main() {
           ThemeData(primarySwatch: Colors.blue, fontFamily: "SF Pro Display"),
       home: const HomePage(),
       debugShowCheckedModeBanner: false,
+      routes: {
+        loginRoute: (context) => const LoginView(),
+        signUpRoute: (context) => const SignUpView(),
+      },
     ),
   );
 }
@@ -41,7 +47,7 @@ class HomePage extends StatelessWidget {
                 devtools.log('No user');
               }
               devtools.log('yeah');
-              return const LoginView();
+              return const SignUpView();
             default:
               devtools.log('wassap');
               return const LoginView();

@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^1.0.3
+  font_awesome_flutter: ^9.2.0
   hexcolor: ^2.0.6
   introduction_screen: ^3.0.0
 
@@ -48,6 +49,8 @@ flutter:
     - assets/images/new_habit.svg
     - assets/images/see_progress.svg
     - assets/images/welcome.svg
+    - assets/images/facebook_logo.svg
+    - assets/images/google_logo.svg
   fonts:
     - family: SF Pro Display
       fonts:

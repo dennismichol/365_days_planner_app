@@ -19,3 +19,19 @@ const string0151 = 'Skip tour';
 const string0152 = 'Sign Up';
 const string0153 = 'Or continue as ';
 const string0154 = 'guest';
+const string0155 = "Don't have an Account? ";
+const string0156 = "Sign up";
+const string0157 = "Sign In";
+const string0158 = "Sign in with Facebook";
+const string0159 = "Sign in with Google";
+const string0160 = "or";
+const string0161 = "Already registered? ";
+const string0162 = "Sign in";
+const string0163 = "Sign up with Facebook";
+const string0164 = "Sign up with Google";
+const string0165 = 'Create an Account';
+const string0166 = 'Name';
+
+//Text field strings - from 0301 - 0350.
+const string0301 = 'Email';
+const string0302 = 'Password';
