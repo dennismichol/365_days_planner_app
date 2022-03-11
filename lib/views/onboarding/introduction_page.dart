@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:task_management/constants/colors.dart';
 import 'package:task_management/constants/images.dart';
+import 'package:task_management/constants/routes.dart';
 import 'package:task_management/constants/strings.dart';
 import 'package:task_management/pages/intro_page_generic.dart';
 
@@ -12,6 +13,7 @@ class IntroductionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -32,6 +34,7 @@ class IntroductionPage extends StatelessWidget {
         toolbarHeight: 55,
       ),
       body: IntroductionScreen(
+        globalBackgroundColor: Colors.white,
         rawPages: [
           createIntroPage(
             string0001,
@@ -68,19 +71,34 @@ class IntroductionPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              TextButton(
-                onPressed: () {},
-                child: const Text(string0152),
-                style: TextButton.styleFrom(
-                  primary: secondaryColorOne,
-                  backgroundColor: primaryColorOne,
-                  padding: const EdgeInsets.all(20),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  textStyle: const TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey.withOpacity(.7),
+                        spreadRadius: 3,
+                        offset: const Offset(0, 3),
+                        blurRadius: 5),
+                  ],
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, signUpRoute, (route) => false);
+                  },
+                  child: const Text(string0152),
+                  style: TextButton.styleFrom(
+                    primary: secondaryColorOne,
+                    backgroundColor: primaryColorOne,
+                    padding: const EdgeInsets.all(20),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    textStyle: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ),

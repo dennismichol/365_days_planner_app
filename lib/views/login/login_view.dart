@@ -1,26 +1,26 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:task_management/constants/colors.dart';
 import 'package:task_management/constants/routes.dart';
 import 'package:task_management/constants/strings.dart';
+import 'package:task_management/popup_views/email_verify.dart';
 
-class SignUpView extends StatefulWidget {
-  const SignUpView({Key? key}) : super(key: key);
+class LoginView extends StatefulWidget {
+  const LoginView({Key? key}) : super(key: key);
 
   @override
-  State<SignUpView> createState() => _SignUpViewState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _SignUpViewState extends State<SignUpView> {
-  late final TextEditingController _name;
+class _LoginViewState extends State<LoginView> {
   late final TextEditingController _email;
   late final TextEditingController _password;
   bool _isObscure = true;
 
   @override
   void initState() {
-    _name = TextEditingController();
     _email = TextEditingController();
     _password = TextEditingController();
     super.initState();
@@ -28,7 +28,6 @@ class _SignUpViewState extends State<SignUpView> {
 
   @override
   void dispose() {
-    _name.dispose();
     _email.dispose();
     _password.dispose();
     super.dispose();
@@ -49,34 +48,8 @@ class _SignUpViewState extends State<SignUpView> {
               child: Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 50),
                 child: Text(
-                  string0165,
+                  'Sign in',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
-              child: TextField(
-                controller: _name,
-                enableSuggestions: false,
-                autocorrect: false,
-                keyboardType: TextInputType.name,
-                decoration: InputDecoration(
-                  hintText: string0166,
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
-                      width: 1,
-                      color: Colors.black,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
-                      width: 1,
-                      color: Colors.black,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
                 ),
               ),
             ),
@@ -156,8 +129,32 @@ class _SignUpViewState extends State<SignUpView> {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: TextButton(
-                  onPressed: () {},
-                  child: const Text(string0152),
+                  onPressed: () async {
+                    final email = _email.text;
+                    final password = _password.text;
+                    try {
+                      await FirebaseAuth.instance.signInWithEmailAndPassword(
+                          email: email, password: password);
+                      final user = FirebaseAuth.instance.currentUser;
+                      if (user != null) {
+                        if (user.emailVerified) {
+                          Navigator.of(context).pushNamedAndRemoveUntil(
+                            mainScreenRoute,
+                            (route) => false,
+                          );
+                        } else {
+                          await showEmailVerifyPopup(context);
+                        }
+                      }
+                    } on FirebaseAuthException catch (error) {
+                      switch (error.code) {
+                        case "user-not-found":
+                          print("invalid user");
+                          break;
+                      }
+                    }
+                  },
+                  child: const Text(string0157),
                   style: TextButton.styleFrom(
                     primary: secondaryColorOne,
                     backgroundColor: primaryColorOne,
@@ -184,9 +181,9 @@ class _SignUpViewState extends State<SignUpView> {
                       color: secondaryColorFour,
                     ),
                     children: <TextSpan>[
-                      const TextSpan(text: string0161),
+                      const TextSpan(text: string0155),
                       TextSpan(
-                        text: string0162,
+                        text: string0156,
                         style: const TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.w600,
@@ -195,7 +192,7 @@ class _SignUpViewState extends State<SignUpView> {
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.of(context).pushNamedAndRemoveUntil(
-                                loginRoute, (route) => false);
+                                signUpRoute, (route) => false);
                           },
                       ),
                     ],
@@ -258,7 +255,7 @@ class _SignUpViewState extends State<SignUpView> {
                     FontAwesomeIcons.facebookF,
                     color: Colors.white,
                   ),
-                  label: const Text(string0163),
+                  label: const Text(string0158),
                   style: TextButton.styleFrom(
                     primary: secondaryColorOne,
                     backgroundColor: facebookBlue,
@@ -293,7 +290,7 @@ class _SignUpViewState extends State<SignUpView> {
                     FontAwesomeIcons.google,
                     color: Colors.white,
                   ),
-                  label: const Text(string0164),
+                  label: const Text(string0159),
                   style: TextButton.styleFrom(
                     primary: secondaryColorOne,
                     backgroundColor: googleRed,

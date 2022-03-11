@@ -31,7 +31,19 @@ const string0163 = "Sign up with Facebook";
 const string0164 = "Sign up with Google";
 const string0165 = 'Create an Account';
 const string0166 = 'Name';
+const string0167 = 'Weak password';
+const string0168 = 'Weak password detected. Please use a stronger password';
+const string0169 = 'Ok';
+const string0170 = 'Email already in use';
+const string0171 = 'Email entered is already in use. Please login instead.';
+const string0172 = 'Invalid email';
+const string0173 = 'Email address is invalid.';
 
 //Text field strings - from 0301 - 0350.
 const string0301 = 'Email';
 const string0302 = 'Password';
+
+//Popup strings - from 0351 - 0400.
+const string0351 = 'Verify Email';
+const string0352 =
+    'Email verification sent. Please click the link on the email.';
