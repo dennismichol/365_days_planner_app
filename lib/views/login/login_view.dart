@@ -6,6 +6,7 @@ import 'package:task_management/constants/colors.dart';
 import 'package:task_management/constants/routes.dart';
 import 'package:task_management/constants/strings.dart';
 import 'package:task_management/popup_views/email_verify.dart';
+import 'dart:developer' as devtools show log;
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -149,7 +150,7 @@ class _LoginViewState extends State<LoginView> {
                     } on FirebaseAuthException catch (error) {
                       switch (error.code) {
                         case "user-not-found":
-                          print("invalid user");
+                          devtools.log("invalid user");
                           break;
                       }
                     }
