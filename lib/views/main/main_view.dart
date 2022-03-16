@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:task_management/constants/colors.dart';
 import 'package:task_management/constants/screen_dimensions.dart';
 import 'package:task_management/views/main/components/custom_nav_bar.dart';
@@ -119,44 +120,9 @@ class MainScreenViewState extends State<MainScreenView> {
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: displayHeight(context) * .025,
-                  right: displayHeight(context) * .025,
-                  bottom: displayHeight(context) * .010,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Goals for this week',
-                      style: TextStyle(
-                        fontSize: displayWidth(context) * 0.04,
-                        fontWeight: FontWeight.w600,
-                        color: secondaryColorThree,
-                      ),
-                    ),
-                    Container(
-                      height: displayWidth(context) * 0.05,
-                      width: displayWidth(context) * 0.08,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(displayHeight(context) * .05),
-                        ),
-                        color: primaryColorOne,
-                      ),
-                      child: Text(
-                        '1/3',
-                        style: TextStyle(
-                          fontSize: displayWidth(context) * 0.03,
-                          color: Colors.white,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
+              const DividerWithLeadThru(
+                title: 'Goals for this week',
+                remainingTasks: '1/3',
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -201,11 +167,207 @@ class MainScreenViewState extends State<MainScreenView> {
                     ],
                   ),
                 ),
+              ),
+              SizedBox(
+                height: displayHeight(context) * .015,
+              ),
+              const DividerWithLeadThru(
+                title: 'My habits',
+                remainingTasks: '2/6',
+              ),
+              SizedBox(
+                height: displayHeight(context) * .015,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: displayHeight(context) * .010,
+                    left: displayHeight(context) * .025,
+                    right: displayHeight(context) * .025,
+                    bottom: displayHeight(context) * .010,
+                  ),
+                  child: Row(
+                    children: [
+                      const HabitIcon(
+                        icon: FontAwesomeIcons.newspaper,
+                        color: primaryColorThree,
+                        label: 'Reading books',
+                        iconAlignment: AlignmentDirectional(-0.2, 0.0),
+                        progress: 0.38,
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      const HabitIcon(
+                        icon: Icons.fitness_center,
+                        color: Colors.purple,
+                        label: 'Sport',
+                        iconAlignment: AlignmentDirectional(0.0, 0.0),
+                        progress: 0.50,
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      const HabitIcon(
+                        icon: Icons.access_alarm_rounded,
+                        color: Colors.green,
+                        label: 'Wake up at 6 a.m.',
+                        iconAlignment: AlignmentDirectional(0.1, 0.0),
+                        progress: 0.63,
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      const HabitIcon(
+                        icon: Icons.check,
+                        color: secondaryColorTwo,
+                        label: 'Meditation',
+                        iconAlignment: AlignmentDirectional(0.0, 0.0),
+                        progress: 0.25,
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      HabitIcon(
+                        icon: Icons.water_drop_outlined,
+                        color: Colors.cyan.shade200,
+                        label: 'Water',
+                        iconAlignment: const AlignmentDirectional(0.0, 0.0),
+                        progress: 0.45,
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      const HabitIcon(
+                        icon: Icons.check,
+                        color: secondaryColorTwo,
+                        label: 'Study English',
+                        iconAlignment: AlignmentDirectional(0.0, 0.0),
+                        progress: 0.25,
+                      ),
+                    ],
+                  ),
+                ),
               )
             ],
           ),
           bottomNavigationBar: const CustomBotNavBar(),
         ),
+      ),
+    );
+  }
+}
+
+class HabitIcon extends StatelessWidget {
+  const HabitIcon({
+    Key? key,
+    required this.icon,
+    required this.color,
+    required this.label,
+    required this.iconAlignment,
+    required this.progress,
+  }) : super(key: key);
+
+  final IconData? icon;
+  final Color? color;
+  final String label;
+  final AlignmentDirectional iconAlignment;
+  final double progress;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Stack(
+          alignment: iconAlignment,
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                icon,
+                color: color,
+                size: 25,
+              ),
+            ),
+            SizedBox(
+              height: 65,
+              width: 65,
+              child: CircularProgressIndicator(
+                color: color,
+                value: progress,
+                backgroundColor: secondaryColorOne,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        SizedBox(
+          width: 75,
+          height: 50,
+          child: Text(
+            label,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              color: secondaryColorTwo,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class DividerWithLeadThru extends StatelessWidget {
+  const DividerWithLeadThru({
+    Key? key,
+    required this.title,
+    required this.remainingTasks,
+  }) : super(key: key);
+
+  final String title;
+  final String remainingTasks;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: displayHeight(context) * .025,
+        right: displayHeight(context) * .025,
+        bottom: displayHeight(context) * .010,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: displayWidth(context) * 0.04,
+              fontWeight: FontWeight.w600,
+              color: secondaryColorThree,
+            ),
+          ),
+          Container(
+            height: displayWidth(context) * 0.05,
+            width: displayWidth(context) * 0.08,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(displayHeight(context) * .05),
+              ),
+              color: primaryColorOne,
+            ),
+            child: Text(
+              remainingTasks,
+              style: TextStyle(
+                fontSize: displayWidth(context) * 0.03,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -306,10 +468,13 @@ class GoalCard extends StatelessWidget {
             const SizedBox(
               height: 45,
             ),
-            LinearProgressIndicator(
-              value: progress,
-              color: dotColor,
-              backgroundColor: secondaryColorOne,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: LinearProgressIndicator(
+                value: progress,
+                color: dotColor,
+                backgroundColor: secondaryColorOne,
+              ),
             ),
             const SizedBox(
               height: 5,
