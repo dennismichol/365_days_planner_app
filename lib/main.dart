@@ -46,8 +46,10 @@ class HomePage extends StatelessWidget {
               devtools.log(user.displayName ?? 'None');
               if (user.emailVerified) {
                 devtools.log('Email is verified');
+                return const MainScreenView();
               } else {
                 devtools.log('Email not verified');
+                return const MainScreenView();
               }
             } else {
               devtools.log('No user');
