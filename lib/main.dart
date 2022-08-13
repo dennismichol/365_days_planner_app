@@ -18,7 +18,19 @@ void main() {
     MaterialApp(
       title: '365 DAYS',
       theme:
-          ThemeData(primarySwatch: Colors.blue, fontFamily: "SF Pro Display"),
+          ThemeData(
+            primarySwatch: Colors.blue,
+            fontFamily: "SF Pro Display",
+            appBarTheme:
+              const AppBarTheme(
+                systemOverlayStyle:
+                  SystemUiOverlayStyle(
+                    statusBarColor: Colors.white,
+                    statusBarIconBrightness: Brightness.dark,
+                    statusBarBrightness: Brightness.light
+                  )
+            )
+          ),
       home: const HomePage(),
       debugShowCheckedModeBanner: false,
       routes: {
