@@ -19,7 +19,10 @@ class IntroductionPage extends StatelessWidget {
         elevation: 0,
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, loginRoute, (route) => false);
+            },
             child: const Text(
               string0151,
               style: TextStyle(
