@@ -61,7 +61,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '504603180621',
     projectId: 'task-management-9db24',
     storageBucket: 'task-management-9db24.appspot.com',
-    iosClientId: '504603180621-v6patag83kguh059a8ani2kmb7e5pv67.apps.googleusercontent.com',
+    iosClientId:
+        '504603180621-v6patag83kguh059a8ani2kmb7e5pv67.apps.googleusercontent.com',
     iosBundleId: 'dev.dennismichol.taskmanagement',
   );
 }
