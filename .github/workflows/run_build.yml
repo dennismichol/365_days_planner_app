@@ -1,0 +1,54 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+    paths-ignore:
+      - '**/README.md'
+  pull_request:
+    branches: [ "main" ]
+    paths-ignore:
+      - '**/README.md'
+
+  workflow_dispatch:
+
+jobs:
+  buildAndroid:
+    name: Build (Android)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+      - name: Install JAVA SDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+      - name: Install Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - name: Check Flutter SDK Version
+        run: flutter --version
+      - name: Install Flutter dependencies
+        run: flutter pub get
+      - name: Build Android APK
+        run: flutter build apk --no-pub
+      - name: Build Android App Bundle
+        run: flutter build appbundle --no-pub
+  buildiOS:
+    name: Build (iOS)
+    runs-on: macos-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+      - name: Install Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - name: Check Flutter SDK Version
+        run: flutter --version
+      - name: Install Flutter dependencies
+        run: flutter pub get
+      - name: Build iOS
+        run: flutter build ios --release --no-codesign --no-pub
