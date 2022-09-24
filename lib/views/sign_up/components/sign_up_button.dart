@@ -113,7 +113,7 @@ class SignUpButton extends StatelessWidget {
         },
         child: const Text(string0152),
         style: TextButton.styleFrom(
-          primary: secondaryColorOne,
+          foregroundColor: secondaryColorOne,
           backgroundColor: primaryColorOne,
           padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(

@@ -157,7 +157,7 @@ class _LoginViewState extends State<LoginView> {
                   },
                   child: const Text(string0157),
                   style: TextButton.styleFrom(
-                    primary: secondaryColorOne,
+                    foregroundColor: secondaryColorOne,
                     backgroundColor: primaryColorOne,
                     padding: const EdgeInsets.all(20),
                     shape: RoundedRectangleBorder(
@@ -258,7 +258,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   label: const Text(string0158),
                   style: TextButton.styleFrom(
-                    primary: secondaryColorOne,
+                    foregroundColor: secondaryColorOne,
                     backgroundColor: facebookBlue,
                     padding: const EdgeInsets.all(20),
                     shape: RoundedRectangleBorder(
@@ -293,7 +293,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   label: const Text(string0159),
                   style: TextButton.styleFrom(
-                    primary: secondaryColorOne,
+                    foregroundColor: secondaryColorOne,
                     backgroundColor: googleRed,
                     padding: const EdgeInsets.all(20),
                     shape: RoundedRectangleBorder(
