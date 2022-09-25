@@ -47,3 +47,12 @@ const string0302 = 'Password';
 const string0351 = 'Verify Email';
 const string0352 =
     'Email verification sent. Please click the link on the email.';
+
+//Weekday strings - from 0401 - 0407.
+const string0401 = 'Monday';
+const string0402 = 'Tuesday';
+const string0403 = 'Wednesday';
+const string0404 = 'Thursday';
+const string0405 = 'Friday';
+const string0406 = 'Saturday';
+const string0407 = 'Sunday';

@@ -29,7 +29,7 @@ class SignUpFacebook extends StatelessWidget {
         ),
         label: const Text(string0163),
         style: TextButton.styleFrom(
-          primary: secondaryColorOne,
+          foregroundColor: secondaryColorOne,
           backgroundColor: facebookBlue,
           padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(

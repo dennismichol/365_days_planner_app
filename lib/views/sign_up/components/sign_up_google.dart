@@ -29,7 +29,7 @@ class SignUpGoogle extends StatelessWidget {
         ),
         label: const Text(string0164),
         style: TextButton.styleFrom(
-          primary: secondaryColorOne,
+          foregroundColor: secondaryColorOne,
           backgroundColor: googleRed,
           padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(
