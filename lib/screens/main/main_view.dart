@@ -4,12 +4,12 @@ import 'package:intl/intl.dart';
 import 'package:task_management/constants/colors.dart';
 import 'package:task_management/constants/screen_dimensions.dart';
 import 'package:task_management/constants/strings.dart';
-import 'package:task_management/views/main/components/custom_nav_bar.dart';
-import 'package:task_management/views/main/components/date_now_card.dart';
-import 'package:task_management/views/main/components/divider_with_leadthru.dart';
-import 'package:task_management/views/main/components/goals_card.dart';
-import 'package:task_management/views/main/components/habits_card.dart';
-import 'package:task_management/views/main/components/tasks_card.dart';
+import 'package:task_management/screens/main/components/custom_nav_bar.dart';
+import 'package:task_management/screens/main/components/date_now_card.dart';
+import 'package:task_management/screens/main/components/divider_with_leadthru.dart';
+import 'package:task_management/screens/main/components/goals_card.dart';
+import 'package:task_management/screens/main/components/habits_card.dart';
+import 'package:task_management/screens/main/components/tasks_card.dart';
 import 'dart:developer' as devtools show log;
 
 class MainScreenView extends StatefulWidget {
@@ -25,7 +25,7 @@ class MainScreenViewState extends State<MainScreenView> {
   var dateNow = DateTime.now();
   String dayToday = DateFormat('EEEE').format(DateTime.now()).toString();
   String weekday = DateFormat('d').format(DateTime.now()).toString();
-  int selectedIndex = 0;
+  int selectedIndex = DateTime.now().weekday - 1;
   bool value = false;
 
   void updateDateCardSelection(int index) {
@@ -182,8 +182,8 @@ class MainScreenViewState extends State<MainScreenView> {
                                 cardDescription:
                                     'Finish design of mobile app for online shop',
                               ),
-                              const SizedBox(
-                                width: 15,
+                              SizedBox(
+                                width: displayHeight(context) * .015,
                               ),
                               GoalCard(
                                 taskCount: '',
