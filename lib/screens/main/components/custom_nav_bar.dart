@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:task_management/constants/colors.dart';
 import 'package:task_management/constants/screen_dimensions.dart';
-import 'package:task_management/screens/main/components/custom_fab.dart';
 
 class CustomBotNavBar extends StatefulWidget {
   const CustomBotNavBar({
@@ -13,20 +12,9 @@ class CustomBotNavBar extends StatefulWidget {
   State<CustomBotNavBar> createState() => _CustomBotNavBarState();
 }
 
-class _CustomBotNavBarState extends State<CustomBotNavBar>
-    with SingleTickerProviderStateMixin {
+class _CustomBotNavBarState extends State<CustomBotNavBar> {
   // bool clickedCentreFAB = false;
   int selectedIndex = 0;
-  bool isFABClicked = false;
-
-  late AnimationController animationController;
-  late Animation degOneTranslationAnimation;
-  late Animation rotationAnimation;
-
-  double getRadiansFromDegree(double degree) {
-    double unitRadian = 57.295779513;
-    return degree / unitRadian;
-  }
 
   void updateTabSelection(int index) {
     setState(() {
@@ -35,23 +23,8 @@ class _CustomBotNavBarState extends State<CustomBotNavBar>
   }
 
   @override
-  void initState() {
-    animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 250));
-    degOneTranslationAnimation =
-        Tween(begin: 0.0, end: 1.0).animate(animationController);
-    rotationAnimation = Tween(begin: 180.0, end: 0.0).animate(
-        CurvedAnimation(parent: animationController, curve: Curves.easeOut));
-    super.initState();
-    animationController.addListener(() {
-      setState(() {});
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.bottomCenter,
       children: [
         BottomAppBar(
           child: Container(
@@ -129,106 +102,6 @@ class _CustomBotNavBarState extends State<CustomBotNavBar>
           //shape: const CircularNotchedRectangle(),
           //color of the BottomAppBar
           color: Colors.white,
-        ),
-        Stack(
-          alignment: AlignmentDirectional.bottomCenter,
-          children: [
-            Visibility(
-              visible: isFABClicked == true ? true : false,
-              child: Transform.translate(
-                offset: Offset.fromDirection(
-                  getRadiansFromDegree(270),
-                  degOneTranslationAnimation.value * 110,
-                ),
-                child: const CustomRecFAB(
-                  color: primaryColorOne,
-                  label: 'Task',
-                  desc: 'Add new daily task',
-                  icon: Icons.check_circle_outline,
-                ),
-              ),
-            ),
-            Visibility(
-              visible: isFABClicked == true ? true : false,
-              child: Transform.translate(
-                offset: Offset.fromDirection(
-                  getRadiansFromDegree(270),
-                  degOneTranslationAnimation.value * 200,
-                ),
-                child: const CustomRecFAB(
-                  color: primaryColorOne,
-                  label: 'Goal',
-                  desc: 'Add new week, month, or year goal',
-                  icon: Icons.gps_fixed,
-                ),
-              ),
-            ),
-            Visibility(
-              visible: isFABClicked == true ? true : false,
-              child: Transform.translate(
-                offset: Offset.fromDirection(
-                  getRadiansFromDegree(270),
-                  degOneTranslationAnimation.value * 290,
-                ),
-                child: const CustomRecFAB(
-                  color: primaryColorOne,
-                  label: 'Habit',
-                  desc: 'Create new habit',
-                  icon: Icons.refresh,
-                ),
-              ),
-            ),
-            Visibility(
-              visible: isFABClicked == true ? true : false,
-              child: Transform.translate(
-                offset: Offset.fromDirection(
-                  getRadiansFromDegree(270),
-                  degOneTranslationAnimation.value * 380,
-                ),
-                child: const CustomRecFAB(
-                  color: primaryColorOne,
-                  label: 'Note',
-                  desc: 'Add new note',
-                  icon: Icons.note_outlined,
-                ),
-              ),
-            ),
-            Transform(
-              transform: Matrix4.rotationZ(
-                  getRadiansFromDegree(rotationAnimation.value)),
-              alignment: Alignment.center,
-              child: CustomFAB(
-                height: displayHeight(context) * 0.100,
-                width: displayWidth(context) * 0.2,
-                onClick: () {
-                  if (isFABClicked) {
-                    isFABClicked = false;
-                  } else {
-                    isFABClicked = true;
-                  }
-                  if (animationController.isCompleted) {
-                    animationController.reverse();
-                  } else {
-                    animationController.forward();
-                  }
-                },
-                color: isFABClicked == true
-                    ? secondaryColorThree
-                    : primaryColorOne,
-                icon: isFABClicked == true
-                    ? Icon(
-                        Icons.close,
-                        color: Colors.white,
-                        size: displayWidth(context) * 0.08,
-                      )
-                    : Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: displayWidth(context) * 0.08,
-                      ),
-              ),
-            ),
-          ],
         ),
       ],
     );

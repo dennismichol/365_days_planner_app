@@ -28,9 +28,7 @@ class _CreateGoalState extends State<CreateGoal> {
           const Text(
             'Create a goal',
           ),
-          Container(
-            child: Row(),
-          ),
+          Row(),
         ],
       ),
     );
