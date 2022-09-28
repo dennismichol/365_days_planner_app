@@ -1,2 +1,3 @@
-# task_management_app
- 365 DAYS task management mobile app for iOS and Android created using flutter
+# 365 Days Planner App
+
+### A mobile app created using Flutter for both iOS and Android
