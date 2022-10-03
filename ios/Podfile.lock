@@ -49,8 +49,6 @@ PODS:
   - GoogleUtilities/Reachability (7.7.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (2.0.0)
-  - hexcolor (0.0.1):
-    - Flutter
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -62,7 +60,6 @@ DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
-  - hexcolor (from `.symlinks/plugins/hexcolor/ios`)
 
 SPEC REPOS:
   trunk:
@@ -84,8 +81,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
-  hexcolor:
-    :path: ".symlinks/plugins/hexcolor/ios"
 
 SPEC CHECKSUMS:
   Firebase: 7703fc4022824b6d6db1bf7bea58d13b8e17ec46
@@ -99,7 +94,6 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   GTMSessionFetcher: 681175626052e03fdde7952f7e9c7a9785719506
-  hexcolor: fdfb9c4258ad96e949c2dbcdf790a62194b8aa89
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
 
