@@ -22,7 +22,7 @@ Future<void> showEmailVerifyPopup(BuildContext context) {
                     (route) => false,
                   );
                 } else {
-                  showEmailVerifyPopup(context);
+                  Navigator.of(context).pop(true);
                 }
               }
             },
