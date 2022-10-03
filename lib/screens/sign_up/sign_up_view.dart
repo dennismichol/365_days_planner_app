@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/constants/colors.dart';
-import 'package:task_management/constants/strings.dart';
+import 'package:task_management/common/presentation/constants/colors.dart';
+import 'package:task_management/common/presentation/constants/strings.dart';
 import 'package:task_management/screens/sign_up/components/email_textfield.dart';
 import 'package:task_management/screens/sign_up/components/name_textfield.dart';
 import 'package:task_management/screens/sign_up/components/or_divider.dart';

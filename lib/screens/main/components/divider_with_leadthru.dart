@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/constants/colors.dart';
-import 'package:task_management/constants/screen_dimensions.dart';
+import 'package:task_management/common/presentation/constants/colors.dart';
+import 'package:task_management/common/presentation/constants/screen_dimensions.dart';
 
 class DividerWithLeadThru extends StatelessWidget {
   const DividerWithLeadThru({

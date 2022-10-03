@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/constants/colors.dart';
+import 'package:task_management/common/presentation/constants/colors.dart';
 
 class HabitIcon extends StatelessWidget {
   const HabitIcon({

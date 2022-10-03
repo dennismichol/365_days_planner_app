@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:task_management/constants/colors.dart';
-import 'package:task_management/constants/strings.dart';
+import 'package:task_management/common/presentation/constants/colors.dart';
+import 'package:task_management/common/presentation/constants/strings.dart';
 
 class SignUpFacebook extends StatelessWidget {
   const SignUpFacebook({

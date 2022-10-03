@@ -17,11 +17,3 @@ final welcome = SvgPicture.asset(
   'assets/images/welcome.svg',
   colorBlendMode: BlendMode.clear,
 );
-final facebook = SvgPicture.asset(
-  'assets/images/facebook_logo.svg',
-  colorBlendMode: BlendMode.clear,
-);
-final google = SvgPicture.asset(
-  'assets/images/google_logo.svg',
-  colorBlendMode: BlendMode.clear,
-);

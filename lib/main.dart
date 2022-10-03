@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:task_management/constants/routes.dart';
+import 'package:task_management/common/presentation/constants/routes.dart';
 import 'package:task_management/firebase_options.dart';
 import 'package:task_management/screens/main/main_view.dart';
-import 'package:task_management/screens/onboarding/introduction_page.dart';
+import 'package:task_management/features/onboarding/presentation/screens/introduction_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:task_management/screens/login/login_view.dart';
