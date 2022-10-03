@@ -25,7 +25,6 @@ class _CustomBotNavBarState extends State<CustomBotNavBar> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.bottomCenter,
       children: [
         BottomAppBar(
           child: Container(
@@ -104,27 +103,72 @@ class _CustomBotNavBarState extends State<CustomBotNavBar> {
           //color of the BottomAppBar
           color: Colors.white,
         ),
-        SizedBox(
-          height: displayHeight(context) * 0.145,
-          width: displayWidth(context) * 0.2,
-          child: FloatingActionButton(
-            backgroundColor: primaryColorOne,
-            elevation: 5,
-            onPressed: () {
-              // setState(
-              //   () {
-              //     clickedCentreFAB =
-              //         /!clickedCentreFAB; //to update the animated container
-              //   },
-              // );
-            },
-            child: Icon(
-              Icons.add,
-              size: displayWidth(context) * 0.14,
-            ),
-          ),
-        ),
       ],
+    );
+  }
+}
+
+class CustomRecFAB extends StatelessWidget {
+  const CustomRecFAB({
+    Key? key,
+    required this.color,
+    required this.label,
+    required this.desc,
+    required this.icon,
+  }) : super(key: key);
+
+  final Color color;
+  final String label;
+  final String desc;
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: displayWidth(context) * 0.80,
+      height: displayHeight(context) * 0.1,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: color,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(25, 10, 25, 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  label,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontSize: displayHeight(context) * 0.025,
+                  ),
+                ),
+                const SizedBox(
+                  height: 2.5,
+                ),
+                Text(
+                  desc,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: displayHeight(context) * 0.015,
+                  ),
+                ),
+              ],
+            ),
+            Icon(
+              icon,
+              color: Colors.white,
+              size: displayHeight(context) * 0.035,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

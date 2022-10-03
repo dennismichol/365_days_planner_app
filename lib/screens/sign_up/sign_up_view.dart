@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:task_management/constants/colors.dart';
 import 'package:task_management/constants/strings.dart';
-import 'package:task_management/views/sign_up/components/email_textfield.dart';
-import 'package:task_management/views/sign_up/components/name_textfield.dart';
-import 'package:task_management/views/sign_up/components/or_divider.dart';
-import 'package:task_management/views/sign_up/components/sign_in_text_button.dart';
-import 'package:task_management/views/sign_up/components/sign_up_button.dart';
-import 'package:task_management/views/sign_up/components/sign_up_fb.dart';
-import 'package:task_management/views/sign_up/components/sign_up_google.dart';
+import 'package:task_management/screens/sign_up/components/email_textfield.dart';
+import 'package:task_management/screens/sign_up/components/name_textfield.dart';
+import 'package:task_management/screens/sign_up/components/or_divider.dart';
+import 'package:task_management/screens/sign_up/components/sign_in_text_button.dart';
+import 'package:task_management/screens/sign_up/components/sign_up_button.dart';
+import 'package:task_management/screens/sign_up/components/sign_up_fb.dart';
+import 'package:task_management/screens/sign_up/components/sign_up_google.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({Key? key}) : super(key: key);

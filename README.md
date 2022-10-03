@@ -1,8 +1,7 @@
-# Task Management App
+# 365 Days Planner App
 
 [![Build Badge][]][Build Link] [![Test Badge][]][Test Link]
-
- 365 DAYS task management mobile app for iOS and Android created using flutter
+### A mobile app created using Flutter for both iOS and Android
 
 [Build Badge]: https://github.com/dennismichol/task_management/workflows/Build/badge.svg
 [Build Link]: https://github.com/dennismichol/task_management/actions
