@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:task_management/constants/colors.dart';
-import 'package:task_management/constants/images.dart';
-import 'package:task_management/constants/routes.dart';
-import 'package:task_management/constants/strings.dart';
-import 'package:task_management/pages/intro_page_generic.dart';
+import '../constants/colors.dart';
+import '../constants/images.dart';
+import 'package:task_management/common/presentation/constants/routes.dart';
+import 'package:task_management/common/presentation/constants/strings.dart';
+import '../pages/intro_page_generic.dart';
 
 class IntroductionPage extends StatelessWidget {
   const IntroductionPage({Key? key}) : super(key: key);
@@ -90,7 +90,6 @@ class IntroductionPage extends StatelessWidget {
                     Navigator.pushNamedAndRemoveUntil(
                         context, signUpRoute, (route) => false);
                   },
-                  child: const Text(string0152),
                   style: TextButton.styleFrom(
                     foregroundColor: secondaryColorOne,
                     backgroundColor: primaryColorOne,
@@ -103,6 +102,7 @@ class IntroductionPage extends StatelessWidget {
                       fontSize: 20,
                     ),
                   ),
+                  child: const Text(string0152),
                 ),
               ),
               Center(

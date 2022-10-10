@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:task_management/constants/colors.dart';
-import 'package:task_management/constants/strings.dart';
+import 'package:task_management/common/presentation/constants/colors.dart';
+import 'package:task_management/common/presentation/constants/strings.dart';
 import 'package:task_management/popup_views/email_verify.dart';
 import 'package:task_management/popup_views/generic_alert.dart';
 
