@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/constants/colors.dart';
-import 'package:task_management/constants/screen_dimensions.dart';
+import 'package:taskmanagement/constants/colors.dart';
+import 'package:taskmanagement/constants/screen_dimensions.dart';
 
 class GoalCard extends StatelessWidget {
   const GoalCard({

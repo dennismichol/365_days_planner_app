@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:task_management/constants/colors.dart';
-import 'package:task_management/constants/screen_dimensions.dart';
-import 'package:task_management/constants/strings.dart';
-import 'package:task_management/screens/main/components/custom_fab.dart';
-import 'package:task_management/screens/main/components/custom_nav_bar.dart';
-import 'package:task_management/screens/main/components/date_now_card.dart';
-import 'package:task_management/screens/main/components/divider_with_leadthru.dart';
-import 'package:task_management/screens/main/components/goals_card.dart';
-import 'package:task_management/screens/main/components/habits_card.dart';
-import 'package:task_management/screens/main/components/tasks_card.dart';
-import 'dart:developer' as devtools show log;
+import 'package:taskmanagement/constants/colors.dart';
+import 'package:taskmanagement/constants/screen_dimensions.dart';
+import 'package:taskmanagement/constants/strings.dart';
+import 'package:taskmanagement/screens/main/components/custom_fab.dart';
+import 'package:taskmanagement/screens/main/components/custom_nav_bar.dart';
+import 'package:taskmanagement/screens/main/components/date_now_card.dart';
+import 'package:taskmanagement/screens/main/components/divider_with_leadthru.dart';
+import 'package:taskmanagement/screens/main/components/goals_card.dart';
+import 'package:taskmanagement/screens/main/components/habits_card.dart';
+import 'package:taskmanagement/screens/main/components/tasks_card.dart';
 
 class MainScreenView extends StatefulWidget {
   const MainScreenView({Key? key}) : super(key: key);
