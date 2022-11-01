@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:task_management/constants/colors.dart';
-import 'package:task_management/constants/routes.dart';
-import 'package:task_management/constants/strings.dart';
+import 'package:taskmanagement/constants/colors.dart';
+import 'package:taskmanagement/constants/routes.dart';
+import 'package:taskmanagement/constants/strings.dart';
 
 class SignInTextButton extends StatelessWidget {
   const SignInTextButton({

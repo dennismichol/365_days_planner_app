@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:task_management/constants/routes.dart';
-import 'package:task_management/constants/strings.dart';
+import 'package:taskmanagement/constants/routes.dart';
+import 'package:taskmanagement/constants/strings.dart';
 
 Future<void> showEmailVerifyPopup(BuildContext context) {
   return showDialog(

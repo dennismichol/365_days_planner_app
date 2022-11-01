@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:task_management/constants/colors.dart';
+import 'package:taskmanagement/constants/colors.dart';
 
 Widget createIntroPage(String title, String body, SvgPicture image) {
   return Column(

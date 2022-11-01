@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/constants/strings.dart';
+import 'package:taskmanagement/constants/strings.dart';
 
 class EmailTextField extends StatelessWidget {
   const EmailTextField({

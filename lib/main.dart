@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:task_management/constants/routes.dart';
-import 'package:task_management/firebase_options.dart';
-import 'package:task_management/screens/main/main_view.dart';
-import 'package:task_management/screens/onboarding/introduction_page.dart';
+import 'package:taskmanagement/constants/routes.dart';
+import 'package:taskmanagement/firebase_options.dart';
+import 'package:taskmanagement/screens/main/main_view.dart';
+import 'package:taskmanagement/screens/onboarding/introduction_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:task_management/screens/login/login_view.dart';
-import 'package:task_management/screens/sign_up/sign_up_view.dart';
+import 'package:taskmanagement/screens/login/login_view.dart';
+import 'package:taskmanagement/screens/sign_up/sign_up_view.dart';
 import 'dart:developer' as devtools show log;
 
 void main() {

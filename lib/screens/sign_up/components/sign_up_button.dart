@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:task_management/constants/colors.dart';
-import 'package:task_management/constants/strings.dart';
-import 'package:task_management/popup_views/email_verify.dart';
-import 'package:task_management/popup_views/generic_alert.dart';
+import 'package:taskmanagement/constants/colors.dart';
+import 'package:taskmanagement/constants/strings.dart';
+import 'package:taskmanagement/popup_views/email_verify.dart';
+import 'package:taskmanagement/popup_views/generic_alert.dart';
 
 class SignUpButton extends StatelessWidget {
   const SignUpButton({
