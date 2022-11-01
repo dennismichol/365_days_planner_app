@@ -28,8 +28,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
-  firebase_auth: ^3.3.9
-  firebase_core: ^1.13.1
+  firebase_auth: ^4.1.0
+  firebase_core: ^2.1.1
   flutter:
     sdk: flutter
   flutter_speed_dial: ^6.0.0
